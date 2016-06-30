@@ -1,0 +1,21 @@
+{
+    "name": "ryanvade/flarum-ext-birthdays",
+    "description": "Add birthdays to user profiles",
+    "type": "flarum-extension",
+    "keywords": ["links"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Ryan Owens",
+            "email": "RyanOwens@linux.com"
+        }
+    ],
+    "require": {
+        "flarum/core": "^0.1.0-beta.5"
+    },
+    "extra": {
+        "flarum-extension": {
+            "title": "Birthdays"
+        }
+    }
+}
