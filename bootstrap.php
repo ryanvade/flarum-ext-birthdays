@@ -6,10 +6,12 @@ use Illuminate\Contracts\Events\Dispatcher;
 return function (Dispatcher $events) {
 $events->listen(ConfigureClientView::class, function (ConfigureClientView $event) {
     if ($event->isForum()) {
-        $email = $event->view->getActor()->email;
+        $birthday = $event->view->getActor()->birthday;
+        $str = implode("", file(__DIR__ . '/js/forum/dist/extension.js'));
+        $fp = fopen(__DIR__.'/js/forum/dist/extension.js','w');
+        $str=str_replace('%%USER_BIRTHDAY%%', $birthday, $str);
+        fwrite($fp,$str,strlen($str));
         $event->addAssets(__DIR__.'/js/forum/dist/extension.js');
-        $rawJs = file_get_contents(realpath(__DIR__ . '/../../js/main.js'));
-        $js = str_replace('%%USER_BIRTHDAY%%',  "06/30/2016", $rawJs);
         $event->addBootstrapper('ryanvade/flarum-ext-birthdays/main');
     }
 });

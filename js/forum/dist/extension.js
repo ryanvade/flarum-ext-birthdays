@@ -1,12 +1,14 @@
-System.register('ryanvade/flarum-ext-birthdays/main', ['flarum/extend', 'flarum/components/UserCard'], function (_export) {
+System.register('ryanvade/flarum-ext-birthdays/main', ['flarum/extend', 'flarum/components/UserCard', 'flarum/components/SettingsPage'], function (_export) {
   'use strict';
 
-  var extend, UserCard;
+  var extend, UserCard, SettingsPage;
   return {
     setters: [function (_flarumExtend) {
       extend = _flarumExtend.extend;
     }, function (_flarumComponentsUserCard) {
       UserCard = _flarumComponentsUserCard['default'];
+    }, function (_flarumComponentsSettingsPage) {
+      SettingsPage = _flarumComponentsSettingsPage['default'];
     }],
     execute: function () {
 
@@ -15,7 +17,19 @@ System.register('ryanvade/flarum-ext-birthdays/main', ['flarum/extend', 'flarum/
           items.add('Birthday', m(
             'div',
             null,
-            'BIRTHDAY %%USER_BIRTHDAY%%'
+            'Birthday 0000-00-00'
+          ));
+        });
+
+        extend(SettingsPage.prototype, 'accountItems', function (items) {
+          items.add('Birthday', m(
+            'button',
+            { 'class': 'Button', type: 'button' },
+            m(
+              'span',
+              { 'class': 'Button-label' },
+              'Change Birthday'
+            )
           ));
         });
       });
