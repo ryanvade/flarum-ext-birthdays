@@ -10,9 +10,18 @@
             "email": "RyanOwens@linux.com"
         }
     ],
+    "support" : {
+      "issues": "https://github.com/ryanvade/flarum-ext-birthdays/issues",
+      "source": "https://github.com/ryanvade/flarum-ext-birthdays/"
+    },
     "require": {
         "flarum/core": "^0.1.0-beta.5"
     },
+    "autoload": {
+        "psr-4": {
+            "Flarum\\Birthdays\\": "src/"
+        }
+},
     "extra": {
         "flarum-extension": {
             "title": "Birthdays"

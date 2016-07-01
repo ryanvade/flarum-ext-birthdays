@@ -1,26 +1,11 @@
 import Modal from 'flarum/components/Modal';
 import Button from 'flarum/components/Button'
 
-/**
- * The `ChangeBirthdayModal` component shows a modal dialog which allows the user
- * to change their birthday.
- */
+
 export default class ChangeBirthdayModal extends Modal {
   init() {
     super.init();
-
-    /**
-     * Whether or not the birthday has been changed successfully.
-     *
-     * @type {Boolean}
-     */
     this.success = false;
-
-    /**
-     * The value of the email input.
-     *
-     * @type {function}
-     */
     this.birthday = m.prop(app.session.user.birthday());
   }
 
@@ -29,7 +14,6 @@ export default class ChangeBirthdayModal extends Modal {
   }
 
   title() {
-    //return app.translator.trans('core.forum.change_birthday.title');
     return "Change your Birthday";
   }
 
@@ -74,9 +58,6 @@ export default class ChangeBirthdayModal extends Modal {
 
   onsubmit(e) {
     e.preventDefault();
-
-    // If the user hasn't actually entered a different birthday, we don't
-    // need to update.
     if (this.birthday() === app.session.user.birthday()) {
       this.hide();
       return;

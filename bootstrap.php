@@ -1,4 +1,4 @@
-<?php Namespace Ryanvade\LoginRedirect;
+<?php Namespace Ryanvade\Birthdays;
 
 use Flarum\Event\ConfigureClientView;
 use Illuminate\Contracts\Events\Dispatcher;
