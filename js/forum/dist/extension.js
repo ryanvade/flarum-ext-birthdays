@@ -13,6 +13,7 @@ System.register('ryanvade/flarum-ext-birthdays/main', ['flarum/extend', 'flarum/
     execute: function () {
 
       app.initializers.add('ryanvade-flarum-ext-birthdays', function () {
+        console.log("Inside of main.js for flarum-ext-birthdays");
         extend(UserCard.prototype, 'infoItems', function (items) {
           items.add('Birthday', m(
             'div',
