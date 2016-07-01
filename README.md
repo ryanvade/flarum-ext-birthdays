@@ -1,7 +1,6 @@
 # flarum-ext-birthdays
-## An extension for Flarum that adds birthdays to user accounts
 
-**Goals**
+## Goals
 - [x] Add a Date to the users table
 - [x] Display the users birthday on the user's profile page
 - [ ] Add Modal to allow the user to edit the birthday
